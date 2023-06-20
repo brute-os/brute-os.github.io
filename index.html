@@ -268,13 +268,15 @@ sudo sh -c 'echo "deb [arch=amd64] http://brute-os.github.io/deb/brute-os brute-
         
           <b>>> Using keys.openpgp.org</b>
 <pre>
-gpg --keyserver keys.openpgp.org --recv-key 8EB96B5C2F124F395F0A2888D9ABF9BF2C52565D
+gpg --keyserver keys.openpgp.org --recv-key D9ABF9BF2C52565D
+gpg --export --armor D9ABF9BF2C52565D | sudo apt-key add -
 </pre>
           
           <b>>> Using keyserver.ubuntu.com</b>
 
 <pre>
-gpg --keyserver keyserver.ubuntu.com --recv-key 8EB96B5C2F124F395F0A2888D9ABF9BF2C52565D
+gpg --keyserver keyserver.ubuntu.com --recv-key D9ABF9BF2C52565D
+gpg --export --armor D9ABF9BF2C52565D | sudo apt-key add -
 </pre>
         </p>
       </div>
