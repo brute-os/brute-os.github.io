@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+{% include assets-origin.html %}
+
+<div class="row" style="margin-right: 0 !important;">
+
+  <!-- core -->
+  <div id="core-wrapper" style="width: 100%;">
+    <div class="post">
+
+    {% capture _content %}
+      {% if layout.refactor or page.layout == 'page' %}
+        {% include refactor-content.html content=content %}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    {% endcapture %}
+
+    {% if page.layout == 'page' or page.collection == 'tabs'%}
+      {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+      <h1 class="dynamic-title">
+        {{ title }}
+      </h1>
+      <div class="post-content">
+        {{ _content }}
+      </div>
+    {% else %}
+      {{ _content }}
+    {% endif %}
+
+    </div>
+  </div> <!-- #core-wrapper -->
+
+</div>

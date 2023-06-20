@@ -1,0 +1,149 @@
+---
+layout: compress
+# Default layout
+---
+
+<!DOCTYPE html>
+{% include lang.html %}
+
+{% include assets-origin.html %}
+
+{% capture prefer_mode %}
+  {% if site.theme_mode %}
+    data-mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
+
+<html lang="{{ site.lang }}"{{ prefer_mode }}>
+
+  {% include head.html %}
+  <style>
+    .site-footer{
+      position: relative !important;
+    }
+  </style>
+  <body>
+    {% include header.html %}
+
+    <header class="bg-grad header-banner jumbotron">
+      <div class="container">
+        <h1 class="display-4">Welcome to <strong>Brute OS</strong></h1>
+        <p class="lead"><strong style="color:#ffffff;">Brute OS</strong> is a Linux-based operating system designed for <strong style="color:#ff0000;">Offensive</strong> and <strong style="color:#4288ff;"">Defensive security</strong><br>
+                        Currently it is in alpha stage, and is continously being developed and contributed by <a target="_blank" href="https://sys41x4.github.io/">Arijit Bhowmick [sys41x4]</a>
+        </p>
+      </div>
+    </header>
+    <section id="features" class="py-5">
+      <div class="container">
+        <h2 class="mb-4">Features</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="light-bg card">
+              <div class="card-body">
+                <h4 class="card-title">Powerful command-line interface</h4>
+                <p class="card-text">Brute OS includes a powerful command-line interface that allows you to easily perform complex security-related tasks.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="light-bg card">
+              <div class="card-body">
+                <h4 class="card-title">Wide range of security tools pre-installed</h4>
+                <p class="card-text">Brute OS comes with a wide range of pre-installed security tools, so you don't have to waste time installing them yourself.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="light-bg card">
+              <div class="card-body">
+                <h4 class="card-title">Customizable interface</h4>
+                <p class="card-text">Brute OS allows you to customize the interface to suit your needs, making it easy to use and navigate.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="download" class="py-5 light-bg">
+      <div class="container">
+        <h2 class="mb-4">Download Brute OS</h2>
+        <p>Download Brute OS for free and start using it today! [Currently Under-development]</p>
+        <a href="#" class="btn btn-primary">Download Now</a>
+      </div>
+    </section>
+    <section id="view-project-repository" class="py-5 light-bg">
+      <div class="container">
+        <h2 class="mb-4">Project Repository</h2>
+        <p>Check out the Project Repository</p>
+        <a target="_blank" href="https://gitlab.com/brute-os/" class="btn btn-primary">Project Repository</a>
+      </div>
+    </section>
+    <section id="view-package-repository" class="py-5 light-bg">
+      <div class="container">
+        <h3 class="mb-4">Package Repositories</h3>
+        <p>
+          <b>OFFICIAL Brute OS DEBIAN PACKAGE REPOSITORY :</b> <br>
+          <a href="https://brute-os.github.io/deb/">https://brute-os.github.io/deb/</a>
+        </p>
+      </div>
+    </section>
+    <section id="view-package-repository" class="py-5">
+      <div class="container">
+        <h3 class="mb-4">Package Keys Repository</h3>
+        <p>
+          <b>OFFICIAL Brute OS GPG/PGP KEYS REPOSITORY :</b> <br>
+          <a href="https://brute-os.github.io/keys/">https://brute-os.github.io/keys/</a></p>        
+        <br><br>
+        <h5 class="mb-4">[A] <u>Add <b>brute-os-experimental</b> Repository to APT Sources</u></h5>
+        <p>
+          Currently <b>brute-os-experimental</b> branch is accessable to use before a beta version of this OS is pushed<br><br>
+
+          Add <b>brute-os-experimental</b> branch in your repository as : <br>
+
+<pre>
+sudo sh -c 'echo "deb [arch=amd64] http://brute-os.github.io/deb/brute-os brute-os-experimental main contrib non-free non-free-firmware" > /etc/apt/sources.list.d/deb.brute-os.list'
+</pre>
+          <br>
+        
+          <b>Available Brute OS Key Servers:</b><br>
+          <p>
+            1. <a href="http://keys.openpgp.org/" target="_blank">keys.openpgp.org</a> <br>
+            2. <a href="http://keyserver.ubuntu.com" target="_blank">keyserver.ubuntu.com</a>
+          </p>
+
+        
+          Add <b>Brute OS</b> PGP Key as:<br><br>
+        
+          <b>>> Using keys.openpgp.org</b>
+<pre>
+gpg --keyserver keys.openpgp.org --recv-key 8EB96B5C2F124F395F0A2888D9ABF9BF2C52565D
+</pre>
+          
+          <b>>> Using keyserver.ubuntu.com</b>
+
+<pre>
+gpg --keyserver keyserver.ubuntu.com --recv-key 8EB96B5C2F124F395F0A2888D9ABF9BF2C52565D
+</pre>
+        </p>
+      </div>
+    </section>
+    <section id="documentation" class="py-5 light-bg">
+      <div class="container">
+        <h2 class="mb-4">Documentation</h2>
+        <p>Learn how to use Brute OS with our comprehensive documentation.</p>
+        <a href="https://gitlab.com/brute-os/" class="btn btn-primary">View Documentation</a>
+      </div>
+    </section>
+    <section id="support" class="py-5">
+      <div class="container">
+        <h2 class="mb-4">Support</h2>
+        <p>Need help with Brute OS? Contact our support team for assistance.</p>
+        <a target="_blank" href="https://sys41x4.github.io/" class="btn btn-primary">Contact Support</a>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% include foot.html %}
+  </body>
+</html>
